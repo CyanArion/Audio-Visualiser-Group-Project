@@ -1,0 +1,255 @@
+void setup()
+{
+  background(255);
+  size(1000,600);
+  
+  // Car Variables
+  carX = width/2;
+  carY = height/1.5;
+  
+}
+
+// Car Variables
+float carX;
+float carY;
+
+
+// Car Frame 1
+void drawCar1()
+{
+  //Interior
+  stroke(0);
+  strokeWeight(3);
+  fill(0);
+  line(carX, carY + 5, carX - 5, carY - 18);
+  strokeWeight(1);
+  fill(10);
+  ellipse(carX + 75, carY - 30, 20, 30);
+  ellipse(carX + 80, carY - 10, 30, 20);
+  ellipse(carX + 10, carY - 10, 10, 10);
+  quad(carX + 90, carY + 5, carX + 110, carY + 5, carX + 120, carY - 35, carX + 100, carY - 33);
+
+  // Lights
+  stroke(255);
+  fill(2555, 255, 100);
+  ellipse(carX - 180, carY + 18, 10, 18);
+  fill(255,50,50);
+  rect(carX + 320, carY + 14, 10, 15);
+  
+  // Roof
+  stroke(0);
+  strokeWeight(1);
+  fill(190);
+  quad(carX + 180, carY, carX + 250, carY, carX + 160, carY - 50, carX + 120, carY - 55);
+  quad(carX + 130, carY - 55, carX + 130, carY - 50, carX + 20, carY - 52, carX + 20, carY - 55);
+  strokeWeight(3);
+  stroke(10);
+  line(carX + 120, carY, carX + 123, carY - 48);
+  line(carX - 30, carY, carX + 20, carY - 53);
+  
+  // Body
+  // Front
+  stroke(0);
+  strokeWeight(1);
+  fill(210);
+  rect(carX - 120, carY - 30, 50, 20);
+  fill(0);
+  ellipse(carX - 118, carY - 20, 3, 11);
+  fill(180);
+  rect(carX - 100, carY - 10, 25, 20);
+  fill(60);
+  quad(carX, carY - 10, carX - 180, carY + 2, carX - 180, carY + 50, carX, carY +62);
+  quad(carX - 160, carY + 50, carX - 170, carY + 50, carX - 180, carY + 60, carX - 180, carY + 60);
+  rect(carX - 190, carY + 30, 40, 8);
+  
+  
+  // Rear
+  stroke(0);
+  strokeWeight(1);
+  fill(60);
+  quad(carX + 160, carY - 10, carX + 330, carY + 1, carX + 320, carY + 50, carX +160, carY + 62);
+  line(carX + 170, carY + 40, carX + 175, carY + 30);
+  line(carX + 180, carY + 40, carX + 185, carY + 30);
+  rect(carX + 300, carY + 30, 30, 8);
+  
+  // Middle
+  stroke(0);
+  strokeWeight(1);
+  fill(30);
+  rect(carX - 30,carY - 10, 190, 70);
+  stroke(130);
+  strokeWeight(2);
+  line(carX + 120, carY + 1, carX + 140, carY);
+  // Star Decal
+  stroke(250);
+  fill(250);
+  star(carX + 60, carY + 25, 10, 28, 5);
+  
+ 
+  // Front Wheel
+  stroke(0);
+  strokeWeight(1);
+  fill(50);
+  ellipse(carX - 100, carY + 50, 80, 80);
+  fill(150);
+  ellipse(carX - 100, carY + 50, 60, 60);
+  noFill();
+  strokeWeight(4);
+  arc(carX - 100, carY + 50, 50, 50, 0, PI / 3.0);
+  arc(carX - 100, carY + 50, 40, 40, 0, PI / 3.0);
+  arc(carX - 100, carY + 50, 30, 30, 0, PI / 3.0);
+  arc(carX - 100, carY + 50, 50, 50, PI, PI+QUARTER_PI);
+  arc(carX - 100, carY + 50, 40, 40, PI, PI+QUARTER_PI);
+  arc(carX - 100, carY + 50, 30, 30, PI, PI+QUARTER_PI);
+  
+  // Rear Wheel
+  stroke(0);
+  strokeWeight(1);
+  fill(50);
+  ellipse(carX + 230, carY + 50, 80, 80);
+  fill(150);
+  ellipse(carX + 230, carY + 50, 60, 60);
+  noFill();
+  strokeWeight(4);
+  arc(carX + 230, carY + 50, 50, 50, 0, PI / 3.0);
+  arc(carX + 230, carY + 50, 40, 40, 0, PI / 3.0);
+  arc(carX + 230, carY + 50, 30, 30, 0, PI / 3.0);
+  arc(carX + 230, carY + 50, 50, 50, PI, PI+QUARTER_PI);
+  arc(carX + 230, carY + 50, 40, 40, PI, PI+QUARTER_PI);
+  arc(carX + 230, carY + 50, 30, 30, PI, PI+QUARTER_PI);
+
+  strokeWeight(1);
+}
+
+// Car Frame 2
+void drawCar2()
+{
+    //Interior
+  stroke(0);
+  strokeWeight(3);
+  fill(0);
+  line(carX, carY + 5, carX - 5, carY - 18);
+  strokeWeight(1);
+  fill(10);
+  ellipse(carX + 75, carY - 26, 20, 30);
+  ellipse(carX + 80, carY - 8, 30, 20);
+  ellipse(carX + 10, carY - 8, 10, 10);
+  quad(carX + 90, carY + 5, carX + 110, carY + 5, carX + 120, carY - 35, carX + 100, carY - 33);
+
+  // Lights
+  stroke(255);
+  fill(2555, 255, 100);
+  ellipse(carX - 180, carY + 18, 10, 18);
+  fill(255,50,50);
+  rect(carX + 320, carY + 14, 10, 15);
+  
+  // Roof
+  stroke(0);
+  strokeWeight(1);
+  fill(190);
+  quad(carX + 180, carY, carX + 250, carY, carX + 160, carY - 50, carX + 120, carY - 55);
+  quad(carX + 130, carY - 55, carX + 130, carY - 50, carX + 20, carY - 52, carX + 20, carY - 55);
+  strokeWeight(3);
+  stroke(10);
+  line(carX + 120, carY, carX + 123, carY - 48);
+  line(carX - 30, carY, carX + 20, carY - 53);
+  
+  // Body
+  // Front
+  stroke(0);
+  strokeWeight(1);
+  fill(210);
+  rect(carX - 120, carY - 28, 50, 20);
+  fill(0);
+  ellipse(carX - 118, carY - 18, 3, 11);
+  fill(180);
+  rect(carX - 100, carY - 8, 25, 20);
+  fill(60);
+  quad(carX, carY - 10, carX - 180, carY + 2, carX - 180, carY + 50, carX, carY +62);
+  quad(carX - 160, carY + 50, carX - 170, carY + 50, carX - 180, carY + 60, carX - 180, carY + 60);
+  rect(carX - 190, carY + 30, 40, 8);
+  
+  
+  // Rear
+  stroke(0);
+  strokeWeight(1);
+  fill(60);
+  quad(carX + 160, carY - 10, carX + 330, carY + 1, carX + 320, carY + 50, carX +160, carY + 62);
+  line(carX + 170, carY + 40, carX + 175, carY + 30);
+  line(carX + 180, carY + 40, carX + 185, carY + 30);
+  rect(carX + 300, carY + 30, 30, 8);
+  
+  // Middle
+  stroke(0);
+  strokeWeight(1);
+  fill(30);
+  rect(carX - 30,carY - 10, 190, 70);
+  stroke(130);
+  strokeWeight(2);
+  line(carX + 120, carY + 1, carX + 140, carY);
+  // Star Decal
+  stroke(250);
+  fill(250);
+  star(carX + 60, carY + 25, 10, 28, 5);
+  
+ 
+  // Front Wheel
+  stroke(0);
+  strokeWeight(1);
+  fill(50);
+  ellipse(carX - 100, carY + 50, 80, 80);
+  fill(150);
+  ellipse(carX - 100, carY + 50, 60, 60);
+  noFill();
+  strokeWeight(4);
+  arc(carX - 100, carY + 50, 45, 45, HALF_PI, PI);
+  arc(carX - 100, carY + 50, 35, 35, HALF_PI, PI);
+  arc(carX - 100, carY + 50, 25, 25, HALF_PI, PI);
+  arc(carX - 100, carY + 50, 45, 45, PI+HALF_PI, TWO_PI);
+  arc(carX - 100, carY + 50, 35, 35, PI+HALF_PI, TWO_PI);
+  arc(carX - 100, carY + 50, 25, 25, PI+HALF_PI, TWO_PI);
+  
+  // Rear Wheel
+  stroke(0);
+  strokeWeight(1);
+  fill(50);
+  ellipse(carX + 230, carY + 50, 80, 80);
+  fill(150);
+  ellipse(carX + 230, carY + 50, 60, 60);
+  noFill();
+  strokeWeight(4);
+  arc(carX + 230, carY + 50, 45, 45, HALF_PI, PI);
+  arc(carX + 230, carY + 50, 35, 35, HALF_PI, PI);
+  arc(carX + 230, carY + 50, 25, 25, HALF_PI, PI);
+  arc(carX + 230, carY + 50, 45, 45, PI+HALF_PI, TWO_PI);
+  arc(carX + 230, carY + 50, 35, 35, PI+HALF_PI, TWO_PI);
+  arc(carX + 230, carY + 50, 25, 25, PI+HALF_PI, TWO_PI);
+
+  strokeWeight(1);
+}
+
+void draw()
+{
+ drawCar1(); 
+ 
+ //drawCar2();
+}
+
+// Star Decal
+ void star(float starX, float starY, float radius1, float radius2, int points)
+ {
+  float angle = TWO_PI / points;
+  float halfAngle = angle/2.0;
+  
+  beginShape();
+  for (float a = 0; a < TWO_PI; a += angle) {
+    float sx = starX + cos(a) * radius2;
+    float sy = starY + sin(a) * radius2;
+    vertex(sx, sy);
+    sx = starX + cos(a+halfAngle) * radius1;
+    sy = starY + sin(a+halfAngle) * radius1;
+    vertex(sx, sy);
+  }
+  
+  endShape(CLOSE);
+}
