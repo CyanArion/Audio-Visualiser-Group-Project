@@ -1,0 +1,18 @@
+import ddf.minim.Minim;
+import ddf.minim.AudioPlayer;
+ 
+void setup()
+{
+  Minim m = new Minim(this);
+  (players[0] = m.loadFile("Gorillaz - El Mañana.mp3")).play();
+  players[1]  = m.loadFile("Troye Sivan - HEAVEN.mp3.mp3");
+}
+
+static final int PLAYERS = 2;
+final AudioPlayer[] players = new AudioPlayer[PLAYERS];
+int i;
+ 
+void draw() 
+{
+  if (!players[i].isPlaying())  players[i = (i + 1) % PLAYERS].play();
+}
