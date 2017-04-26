@@ -1,0 +1,19 @@
+void setup()
+{
+  
+  // code for the stars
+  for (int i = 0 ; i < 200; i ++)
+  {
+    int starX = (int)random(0, width);
+    int starY = (int)random(0, height);
+    int starColour = (int)random(200,255);
+    stroke (starColour);
+    point (starX,starY);
+  }
+}
+
+// star variables
+int starX = 100;
+int starY = 100;
+
+
