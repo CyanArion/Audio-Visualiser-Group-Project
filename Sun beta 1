@@ -1,0 +1,57 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+Minim minim;
+
+AudioPlayer player;
+AudioMetaData meta;
+BeatDetect beat; //importing everything that needs to be used in order to play music
+
+void setup()
+{
+  size(1000, 600);
+  minim = new Minim(this);
+  
+  player = minim.loadFile("Gorillaz - El Mañana.mp3"); //plays this song
+  
+  meta = player.getMetaData();
+  beat = new BeatDetect(); //detects all the beats in the song so we can use it to make movement in the circle
+  player.loop();
+  noCursor();
+}
+
+int  r = 200;
+float rad = 70;
+  
+void draw()
+{ 
+  drawVis();
+}
+
+boolean flag =false;
+
+void keyPressed() 
+{
+  if(key==' ')exit(); //press space to exit the audio visualiser
+  if(key=='s')saveFrame("###.jpeg"); //if you press 's' you will save a picture
+}
+
+void drawVis()
+{
+  fill(200, 200, 255);
+  beat.detect(player.mix); 
+  noStroke();
+  rect(0, 0, width, height); //is the 'sky'
+  
+ int bsize = player.bufferSize();
+ 
+  fill(255, 255, 102);
+  beginShape(); 
+  
+ for (int i = 0; i < bsize; i += 50)
+  {
+    float x2 = (r + player.left.get(i) * 100) * cos(i * 360 * PI / bsize); 
+    float y2 = (r + player.left.get(i) * 100) * sin(i * 360 * PI / bsize); //values that both create the circle and control the intensity of movement
+    vertex(x2 + width / 2, y2 + height / 2); //creates the circle 
+  }
+  endShape();
+}
